@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all .2s ease-in-out;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+body, div, section, main, article, header, footer, form {
+    display: flex;
+    flex-direction: column;
+}

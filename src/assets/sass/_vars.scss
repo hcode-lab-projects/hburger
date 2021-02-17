@@ -1,0 +1,17 @@
+@use "colors";
+
+:root {
+    --radius: 10px;
+    --space: 20px;
+    --bar-height: 64px;
+    --field-height: 48px;
+
+    --primary: #{colors.$primary};
+    --secondary: #{colors.$secondary};
+    --dark: #{colors.$dark};
+    --light: #{colors.$light};
+    --white: #{colors.$white};
+
+    --white10: #{colors.$white10};
+    --white25: #{colors.$white25};
+}

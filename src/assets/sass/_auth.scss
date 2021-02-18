@@ -2,12 +2,10 @@
 @use "colors";
 
 #auth {
+    background-color: colors.$bgLogin;
+    background-image: url("../images/bg.svg");
     header {
-        justify-content: center;
-        align-items: center;
-        img {
-            padding: var(--space);
-        }
+        @include components.header;   
     }
     main {
         align-items: center;

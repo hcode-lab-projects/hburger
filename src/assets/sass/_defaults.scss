@@ -10,7 +10,7 @@ body {
     color: var(--white);
 }
 
-body, div, section, main, article, header, footer, form {
+body, div, section, main, article, header, footer, form, label {
     display: flex;
     flex-direction: column;
 }

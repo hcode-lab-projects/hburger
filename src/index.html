@@ -6,9 +6,111 @@
     <title>HBurguer</title>
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
-    
-    
+<body id="app">
+
+    <header>
+        <a href="index.html">
+            <img src="assets/images/logo-icon.svg" alt="hburguer" />
+            <img src="assets/images/logo-text.svg" alt="hburguer" />
+        </a>
+        <img src="https://i.pravatar.cc/50" alt="Avatar" id="avatar" />
+    </header>
+
+    <main>
+        <header>
+            <h1>Monte o seu <span>Hburger</span></h1>
+        </header>
+        <div class="category">
+            <h2>Escolha o pão <small>(escolha apenas um)</small></h2>
+            <ul>
+                <li>
+                    <label>
+                        <input type="radio" name="item" />
+                        <span></span>
+                        <h3>Pão Australiano</h3>
+                        <div>R$ 3,00</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="item" />
+                        <span></span>
+                        <h3>Pão de Batata</h3>
+                        <div>R$ 2,50</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="item" />
+                        <span></span>
+                        <h3>Pão Tradicional</h3>
+                        <div>R$ 2,00</div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="category">
+            <h2>Ingredientes</h2>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="item" />
+                        <span></span>
+                        <h3>Carne Bovina 125g</h3>
+                        <div>R$ 3,00</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="item" />
+                        <span></span>
+                        <h3>Carne de Frango 125g</h3>
+                        <div>R$ 2,50</div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="item" />
+                        <span></span>
+                        <h3>Carne de Peixe 125g</h3>
+                        <div>R$ 2,00</div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <button type="button">Salvar Hamburguer</button>
+    </footer>
+
+    <aside>
+        <header>
+            <img src="assets/images/tray.svg" alt="Bandeja" />
+            <strong>Bandeja<small>2 hamburguers</small></strong>
+        </header>
+        <section>
+            <ul>
+                <li>
+                    <div>Hamburguer 1</div>
+                    <div>R$ 15,00</div>
+                    <button type="button"><img src="assets/images/delete.svg" alt="Excluir" /></button>
+                </li>
+                <li>
+                    <div>Hamburguer 2</div>
+                    <div>R$ 15,00</div>
+                    <button type="button"><img src="assets/images/delete.svg" alt="Excluir" /></button>
+                </li>
+            </ul>
+        </section>
+        <footer>
+
+            <div><small></small>R$ 49,95</div>
+
+            <button type="button"><img src="assets/images/pay.svg" alt="Pagar" />Pagar</button>
+
+        </footer>
+    </aside>
 
 </body>
 </html>

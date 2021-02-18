@@ -3,13 +3,14 @@
   --space: 20px;
   --bar-height: 64px;
   --field-height: 48px;
-  --primary: #FF760C;
-  --secondary: rgba(246, 188, 27, 0.7);
+  --primary: #DD0E0E;
+  --secondary: rgba(255, 82, 82, 0.7);
   --dark: #070D0D;
   --light: #D7D7D7;
   --white: #FFFFFF;
   --white10: rgba(255, 255, 255, 0.1);
   --white25: rgba(255, 255, 255, 0.25);
+  --white90: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -24,17 +25,44 @@ body {
   color: var(--white);
 }
 
-body, div, section, main, article, header, footer, form {
+body, div, section, main, article, header, footer, form, label {
   display: flex;
   flex-direction: column;
 }
 
+#auth {
+  background-color: #250303;
+  background-image: url("../images/bg.svg");
+}
 #auth header {
   justify-content: center;
   align-items: center;
+  height: 350px;
 }
-#auth header img {
-  padding: var(--space);
+#auth header a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#auth header a img:first-child {
+  width: 100px;
+}
+#auth header a img:last-child {
+  margin-top: var(--space);
+  width: 220px;
+}
+@media (min-width: 768px) {
+  #auth header a {
+    flex-direction: row;
+  }
+  #auth header a img:first-child {
+    width: initial;
+  }
+  #auth header a img:last-child {
+    margin-left: var(--space);
+    width: initial;
+  }
 }
 #auth main {
   align-items: center;
@@ -42,7 +70,7 @@ body, div, section, main, article, header, footer, form {
 #auth #form-tabs {
   margin: 0;
   padding: 0;
-  background-color: var(--white10);
+  background-color: #3A1C1C;
   height: 80px;
   display: flex;
   align-items: flex-end;
@@ -55,7 +83,7 @@ body, div, section, main, article, header, footer, form {
   justify-content: center;
   align-items: center;
   height: 64px;
-  background-color: rgba(255, 118, 12, 0.25);
+  background-color: rgba(221, 14, 14, 0.25);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   padding: var(--space);
@@ -66,7 +94,7 @@ body, div, section, main, article, header, footer, form {
   cursor: pointer;
 }
 #auth #form-tabs li:hover {
-  background-color: rgba(255, 118, 12, 0.5);
+  background-color: rgba(221, 14, 14, 0.5);
 }
 #auth #form-tabs li.active {
   background-color: var(--primary);
@@ -125,7 +153,7 @@ body, div, section, main, article, header, footer, form {
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 118, 12, 0.25);
+  box-shadow: 0 0 10px rgba(221, 14, 14, 0.25);
 }
 #auth form footer button:hover {
   background-color: var(--dark);
@@ -136,6 +164,142 @@ body, div, section, main, article, header, footer, form {
   color: var(--dark);
   transition-duration: 0.05s;
   box-shadow: 0 0 5px var(--primary);
+}
+
+#app > header {
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  position: relative;
+}
+#app > header a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app > header a img:first-child {
+  width: 100px;
+}
+#app > header a img:last-child {
+  margin-top: var(--space);
+  width: 220px;
+}
+@media (min-width: 768px) {
+  #app > header a {
+    flex-direction: row;
+  }
+  #app > header a img:first-child {
+    width: initial;
+  }
+  #app > header a img:last-child {
+    margin-left: var(--space);
+    width: initial;
+  }
+}
+#app > header::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-image: linear-gradient(180deg, rgba(7, 13, 13, 0.5) 50.52%, #070D0D 100%), url("../images/photo-red.jpg");
+  background-repeat: no-repeat;
+  filter: brightness(0.8);
+}
+#app > header a {
+  position: relative;
+}
+#app > header #avatar {
+  position: absolute;
+  top: var(--space);
+  right: var(--space);
+  border-radius: 50%;
+}
+#app main > header {
+  background-color: var(--white10);
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
+#app main > header h1 {
+  font-weight: 100;
+  font-size: 32px;
+  margin: 0;
+}
+#app main > header h1 span {
+  color: var(--primary);
+}
+#app main .category {
+  margin: var(--space);
+}
+#app main .category h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+#app main .category ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#app main .category ul {
+  margin-top: var(--space);
+  color: rgba(255, 82, 82, 0.7);
+}
+#app main .category ul label {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: none;
+}
+#app main .category ul label h3, #app main .category ul label div {
+  padding: 10px 0;
+  border-bottom: var(--secondary) 1px dotted;
+}
+#app main .category ul label h3 {
+  flex: 1;
+  font-weight: 100;
+  font: inherit;
+  margin: 0;
+}
+#app main .category ul label > span {
+  display: flex;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  border: var(--secondary) 1px solid;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#app main .category ul label > span::before {
+  position: relative;
+  width: 0%;
+  height: 0%;
+  content: "";
+  background-color: var(--secondary);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#app main .category ul label input {
+  display: none;
+}
+#app main .category ul label input:checked + span::before {
+  width: 80%;
+  height: 80%;
+}
+#app main .category ul label:hover {
+  color: #ff5252;
+}
+#app main .category ul label:hover > span {
+  border-color: #ff5252;
+}
+#app main .category ul label:hover > span::before {
+  background-color: #ff5252;
 }
 
 /*# sourceMappingURL=main.css.map */

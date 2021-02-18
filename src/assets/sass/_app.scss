@@ -1,0 +1,114 @@
+@use "components";
+@use "colors";
+
+#app {
+    > header {
+        @include components.header;
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 0;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-position: top center;
+            background-image: linear-gradient(180deg, rgba(7, 13, 13, 0.5) 50.52%, #070D0D 100%), url("../images/photo-red.jpg");
+            background-repeat: no-repeat;
+            filter: brightness(.8);
+        }
+        a {
+            position: relative;
+        }
+        #avatar {
+            position: absolute;
+            top: var(--space);
+            right: var(--space);
+            border-radius: 50%;
+        }
+    }
+    main {
+        > header {
+            background-color: var(--white10);
+            height: 80px;
+            justify-content: center;
+            align-items: center;
+            h1 {
+                font-weight: 100;
+                font-size: 32px;
+                margin: 0;
+                span {
+                    color: var(--primary);
+                }
+            }
+        }
+        .category {
+            @include components.category-list;
+            margin: var(--space);
+            ul {
+                margin-top: var(--space);
+                color: rgba(colors.$secondary, .7);
+                label {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 16px;
+                    font-weight: 300;
+                    cursor: pointer;
+                    transition: none;
+                    h3, div {
+                        padding: 10px 0;
+                        border-bottom: var(--secondary) 1px dotted;
+                    }
+                    h3 {
+                        flex: 1;
+                        font-weight: 100;
+                        font: inherit;
+                        margin: 0;
+                    }
+                    > span {
+                        display: flex;
+                        margin-right: 10px;
+                        width: 32px;
+                        height: 32px;
+                        border: var(--secondary) 1px solid;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                        &::before {
+                            position: relative;
+                            width: 0%;
+                            height: 0%;
+                            content: "";
+                            background-color: var(--secondary);
+                            transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        }
+                    }
+                    input {
+                        display: none;
+                        &:checked + span {
+                            &::before {
+                                width: 80%;
+                                height: 80%;
+                            }
+                        }
+                    }
+                    &:hover {
+                        color: rgba(colors.$secondary, 1);
+                        > span {
+                            border-color: rgba(colors.$secondary, 1);
+                            &::before {
+                                background-color: rgba(colors.$secondary, 1); 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+
+    }
+    aside {
+
+    }
+}

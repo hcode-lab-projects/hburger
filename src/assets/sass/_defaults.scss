@@ -1,7 +1,13 @@
+@use "colors";
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;
     transition: all .2s ease-in-out;
+    &::selection {
+        background: var(--primary);
+        color: var(--white);
+    }
 }
 
 body {

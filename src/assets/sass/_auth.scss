@@ -31,6 +31,9 @@
         input {
             @include components.input;
         }
+        label + label {
+            margin-top: var(--space);
+        }
         footer {
             flex-direction: row;
             justify-content: space-between;
@@ -43,6 +46,9 @@
             }
             button {
                 @include components.button;
+                position: absolute;
+                bottom: -30px;
+                right: 0;
             }
         }
     }
